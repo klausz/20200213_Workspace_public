@@ -4,6 +4,8 @@
 sudo apt-get update 
 sudo apt-get upgrade
 
+read -p "now python3pip"
+
 sudo apt install python3-pip
 
 # create virtual env in /home/username/python-envs:
@@ -14,10 +16,13 @@ python3 -m venv ~/python-envs/env
 # activate created environment
 source ~/python-envs/env/bin/activate
 
+read -p "in virtual env"
+
 pip3 install wheel
 
 pip3 install cython
 
+read -p "after wheel + cython, before torch"
 
 wget https://nvidia.box.com/shared/static/ncgzus5o23uck9i5oth2n8n06k340l6k.whl -O torch-1.4.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install python3-pip libopenblas-base libopenmpi-dev 
@@ -36,6 +41,8 @@ pip3 install numpy torch-1.4.0-cp36-cp36m-linux_aarch64.whl
 # sudo apt install libjpeg-dev libfreetype6-dev pkg-config libpng-dev
 # pip3 install matplotlib pillow==5.4.1
 
+read -p "after torch now torchvision"
+
 sudo apt-get install libjpeg-dev zlib1g-dev
 git clone --branch <version> https://github.com/pytorch/vision torchvision   # see below for version of torchvision to download
 cd torchvision
@@ -48,11 +55,14 @@ cd ../  # attempting to load torchvision from build dir will result in import er
 # cd vision
 # sudo python3 setup.py install cd ~
 
+
 # install jupyter notebook
 pip3 install jupyter
 
 #start jupyter notebook
 jupyter notebook 
+
+read -p "after jupyter" 
 
 #sudo apt-get install python3-scipy -- war über ubuntu schon drauf 
 
@@ -61,6 +71,8 @@ jupyter notebook
 
 # Python Dev envoronment Visual studio
 dpkg -i code-oss_1.32.3-arm64.deb
+
+read -p "after ms dev" 
 
 #Transfer learning
 #download data
