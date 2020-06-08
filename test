@@ -4,7 +4,9 @@
 sudo apt-get update 
 sudo apt-get upgrade
 
-read -p "now python3pip"
+sudo apt autoremove
+
+# read -p "now python3pip"
 
 sudo apt install python3-pip
 
@@ -18,17 +20,29 @@ source ~/python-envs/env/bin/activate
 
 # read -p "in virtual env"
 
+
+
 pip3 install wheel
 
-# pip3 install cython
+pip3 install cython
 
 # read -p "after wheel + cython, before torch"
 
+# Install PyTorch 
+#wget https://nvidia.box.com/shared/static/ncgzus5o23uck9i5oth2n8n06k340l6k.whl
+#mv ncgzus5o23uck9i5oth2n8n06k340l6k.whl torch-1.4.0-cp36-cp36m-linux_aarch64.whl
+## wget https://nvidia.box.com/shared/static/veo87trfaawj5pfwuqvh l6mzc5b55fbj.whl -O torch-1.1.0a0+b457266-cp36-cp36m- linux_aarch64.whl
+
+
+
 wget https://nvidia.box.com/shared/static/ncgzus5o23uck9i5oth2n8n06k340l6k.whl -O torch-1.4.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install python3-pip libopenblas-base libopenmpi-dev 
-pip3 install Cython
-pip3 install numpy
-pip3 install torch-1.4.0-cp36-cp36m-linux_aarch64.whl
+# pip3 install Cython
+# pip3 install numpy
+#pip3 install torch-1.4.0-cp36-cp36m-linux_aarch64.whl
+#pip3 uninstall torch-1.4.0-cp36-cp36m-linux_aarch64.whl
+
+
 
 # Install PyTorch - old but was working 
 # wget https://nvidia.box.com/shared/static/veo87trfaawj5pfwuqvhl6mzc5b55fbj.whl
@@ -42,7 +56,13 @@ pip3 install torch-1.4.0-cp36-cp36m-linux_aarch64.whl
 # sudo apt install libjpeg-dev libfreetype6-dev pkg-config libpng-dev
 # pip3 install matplotlib pillow==5.4.1
 
-# read -p "after torch now torchvision"
+# install jupyter notebook
+pip3 install jupyter
+
+#start jupyter notebook
+# jupyter notebook 
+
+# read -p "after jupyter" 
 
 # sudo apt-get install libjpeg-dev zlib1g-dev
 # git clone https://github.com/pytorch/vision # when diretory there it works 
@@ -58,13 +78,7 @@ cd vision
 sudo python3 setup.py install cd ~
 
 
-# install jupyter notebook
-pip3 install jupyter
 
-#start jupyter notebook
-# jupyter notebook 
-
-# read -p "after jupyter" 
 
 #sudo apt-get install python3-scipy -- war über ubuntu schon drauf 
 
