@@ -1,0 +1,45 @@
+sudo apt-get update 
+sudo apt-get upgrade
+
+sudo apt install python3-pip
+
+# create virtual env in /home/username/python-envs:
+sudo apt install -y python3-venv
+
+python3 -m venv ~/python-envs/env
+
+# activate created environment
+source ~/python-envs/env/bin/activate
+
+pip3 install wheel
+
+pip3 install cython
+
+# install jupyter notebook
+pip3 install jupyter
+
+#start jupyter notebook
+jupyter notebook 
+
+# Install PyTorch - old but was working 
+wget https://nvidia.box.com/shared/static/veo87trfaawj5pfwuqvh l6mzc5b55fbj.whl -O torch-1.1.0a0+b457266-cp36-cp36m- linux_aarch64.whl
+
+
+pip3 install numpy torch-1.1.0a0+b457266-cp36-cp36m- linux_aarch64.whl
+
+#install old version of matplotlib 
+sudo apt install libjpeg-dev libfreetype6-dev pkg-config libpng-dev
+pip3 install matplotlib pillow==5.4.1
+
+
+cd /home/mircea/python-envs/env/lib/python3.6/site- packages
+git clone https://github.com/pytorch/vision
+cd vision
+sudo python3 setup.py install cd ~
+
+#Transfer learning
+#download data
+wget https://download.pytorch.org/tutorial/hymenoptera_data.zip
+unzip hymenoptera_data.zip
+
+#Create Python Code (or was it Jupyter Notebook)
